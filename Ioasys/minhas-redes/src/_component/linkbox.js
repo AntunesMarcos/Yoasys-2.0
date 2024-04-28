@@ -24,11 +24,12 @@ const LinkBox = () => {
     }
         
     return (
-        <div>
+        <div >
             {
                 links.map(link => {
+                    
                     return(
-                        <button onClick={() => openLink(link.url)}>{link.name}</button>
+                        <button  onClick={() => openLink(link.url)}>{link.name}</button>
                     );
                 })
             }
