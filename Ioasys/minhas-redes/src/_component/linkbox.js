@@ -1,15 +1,37 @@
-const LinkBox = () => {
-
+const LinkBox = () => { 
+    
+    const links = [
+        {
+            url: "https://www.linkedin.com/in/marcos-antunes-7190572ba/",
+            name: "Linkedin",
+        },
+        {
+            url: "https://github.com/AntunesMarcos",
+            name: "GitHub",
+        },
+        {
+            url: "https://www.instagram.com/_marcosfxp_/",
+            name: "Instagram",
+        },
+        {
+            url: "https://twitter.com/_marcosfxp_",
+            name: "X",
+        }
+    ]
+        
     function openLink(url) {
         window.open(url, "_blank");
     }
         
     return (
         <div>
-            <button onClick={() => openLink("https://www.linkedin.com/in/marcos-antunes-7190572ba/")}>Linkedin</button>
-            <button onClick={() => openLink("https://github.com/AntunesMarcos")}>GitHub</button>
-            <button onClick={() => openLink("https://www.instagram.com/marcos_antune5/")}>Instagram</button>
-            <button onClick={() => openLink("https://twitter.com/_marcosfxp_")}>X</button>
+            {
+                links.map(link => {
+                    return(
+                        <button onClick={() => openLink(link.url)}>{link.name}</button>
+                    );
+                })
+            }
         </div>
     );
 }
